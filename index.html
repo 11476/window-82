@@ -1,28 +1,236 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+  <head>
+    <meta charset="utf-8" />
+    <title>Semiprimer</title>
+    <meta
+      name="description"
+      content="check if numbers are semiprime or not..."
+    />
+    <style>
+      * {
+        font-family:
+          "Fira Code", "Arial" "Source Code Pro", "Inconsolata", "Roboto Serif",
+          "Roboto Mono", monospace;
+      }
+      @keyframes green {
+        from {
+          background-color: rgb(48, 183, 10);
+          transform: skewY(-30deg);
+        }
+        15% {
+          background-color: lightgreen;
+          transform: skewY(-20deg);
+        }
+        to {
+          background-color: white;
+        }
+      }
+      @keyframes red {
+        from {
+          background-color: red;
+          transform: skewZ(-40deg);
+        }
+        75% {
+          background-color: lightgoldenrodyellow;
+          transform: skewZ(-2deg);
+        }
+        to {
+          background-color: white;
+        }
+      }
+      @keyframes flyright {
+        from {
+          transform: rotateX(0deg) scaleY(5);
+          opacity: 1;
+        }
+        to {
+          transform: rotateX(100deg) scaleX(5);
+          opacity: 0;
+        }
+      }
+      .green {
+        /* animation: green 0.4s ease-out; */
+      }
+      .red {
+        animation: red 1s;
+      }
+      .greenlog {
+        background-color: lightgreen;
+        font-size: large;
+      }
+      .redlog {
+        border-bottom: groove salmon 2px;
+        font-size: small;
+      }
+      #infinitesimal {
+        overflow-x: scroll;
+        height: 10rem;
+        background-color: rgb(104, 159, 207);
+      }
+      .invisible {
+        opacity: 0;
+      }
+      .flyright {
+        animation-timing-function: linear;
+        animation-name: flyright;
+        animation-duration: 1300ms;
+        font-family:
+          "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <h1 style="text-align: center">Is this Semiprime?</h1>
+    <h1 style="display: inline-block" id="body">
+      <span id="number">Round 0 --&gt; Is 2 semiprime?</span>
+    </h1>
+    &nbsp;&nbsp;&nbsp;
+    <span id="streak" style="display: inline-block"></span>
+    <hr />
+    <button id="y" onclick="action(true)">Yes (X)</button>
+    <button id="n" onclick="action(false)">No (C)</button>
+    <p>
+      A semiprime is a number which is the product of 2 prime numbers. These
+      numbers can be the same, so all prime squares are semiprimes. Semiprimes
+      have three or four factors. An example of a semiprime is 55723, which is
+      103 • 541 (they're both primes, you can check) Anyways, why are you still
+      reading this? Get back to detection!
+    </p>
+    <div id="infinitesimal">Log:</div>
+    <button
+      onclick="
+        forall = !forall;
+        if (forall) {
+          this.style.backgroundColor = 'salmon';
+        } else {
+          this.style.backgroundColor = 'initial';
+        }
+      "
+    >
+      enable PF for non-semiprimes
+    </button>
 
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
-            </style>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script async defer>
+      "use strict";
+      function checkSemiprime(num) {
+        let cnt = 0;
 
-    </head>
-    <body>
-        <script>
-            AOS.init();
-          </script>
+        for (let i = 2; cnt < 2 && i * i <= num; ++i)
+          while (num % i == 0) {
+            if (i > 5000) {
+              return Math.random() > 0.5;
+            }
+            num /= i;
+            ++cnt;
+          }
+        if (num > 1) ++cnt;
+        return cnt == 2;
+      }
+      function primeFactors(n) {
+        const factors = [];
+        let divisor = 2;
 
-        <script src="" async defer></script>
+        while (n >= 2) {
+          if (n % divisor == 0) {
+            factors.push(divisor);
+            n = n / divisor;
+          } else {
+            divisor++;
+          }
+        }
+        return factors;
+      }
 
-        <canvas>
-            <iframe></iframe>
-        </canvas>
-    </body>
+      var current_number = 2;
+      var body = document.getElementById("body");
+      var number_element = document.getElementById("number");
+      var removeGreenTimeout = 0;
+      var removeRedtimeout = 0;
+      var laststreaktime = 0;
+      var streakdelta = 0;
+      var streakn = 0;
+      var round = 0;
+      var forall = false;
+      var _ = 0;
+      function action(x) {
+        if (x == checkSemiprime(current_number)) {
+          round++;
+          var now = Date.now();
+          document.getElementById("infinitesimal").innerHTML +=
+            `<span class="${x ? "greenlog" : "redlog"}">${current_number}<span style="font-size: xx-small;">${x || forall ? "(" + primeFactors(current_number).join("•") + ")" : ""}</span></span> `;
+          current_number +=
+            Math.floor(
+              Math.max(
+                0,
+                (Math.sqrt(streakn * 1.1 + 1) * round - 44) / 64 +
+                  Math.random(),
+              ),
+            ) + 1;
+          body.classList.remove("green");
+          void body.offsetWidth;
+          body.classList.add("green");
+          number_element.innerHTML = `Round ${round} --> Is ${current_number} semiprime?`;
+          //clearTimeout(removeGreenTimeout);
+
+          removeGreenTimeout = setTimeout(function () {
+            body.classList.remove("green");
+          }, 300);
+          streakdelta = now - laststreaktime;
+          if (streakdelta < 1200) {
+            streakn++;
+          } else {
+            streakn = 0;
+          }
+          laststreaktime = now;
+        } else {
+          streakn = 0;
+          round = 0;
+          current_number = 2;
+          document.getElementById("infinitesimal").innerHTML = "Log: ";
+          let body2 = document.getElementById("body");
+          body2.classList.remove("red");
+          void body2.offsetWidth;
+          body2.classList.add("red");
+          clearTimeout(removeRedtimeout);
+          removeRedtimeout = setTimeout(function () {
+            body2.classList.remove("red");
+          }, 900);
+          number_element.innerHTML = `Round ${round} --> Is ${current_number} semiprime?`;
+        }
+
+        var s = document.getElementById("streak");
+        s.classList.remove("invisible");
+        s.classList.remove("flyright");
+        void s.offsetWidth;
+        s.innerHTML = `${streakn}x`;
+        s.classList.add("flyright");
+
+        clearTimeout(_);
+        _ = setTimeout(() => {
+          s.classList.remove("flyright");
+          s.classList.add("invisible");
+        }, 1200);
+      }
+    </script>
+    <script async defer>
+      document.addEventListener("keydown", function (e) {
+        if (e.key == "x") {
+          document.getElementById("y").click();
+        }
+        if (e.key == "c") {
+          document.getElementById("n").click();
+        }
+      });
+    </script>
+    <script async defer>
+      let a = setInterval(function () {
+        action(checkSemiprime(current_number));
+        if (round > 500) {
+          clearInterval(a);
+        }
+      }, 40);
+    </script>
+  </body>
 </html>
