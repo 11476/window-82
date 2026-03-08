@@ -1,83 +1,79 @@
-
-
 * {
-    font-family:
-      "Fira Code", sans-serif;
-      
-      font-variant-ligatures:discretionary-ligatures;
+  font-family: "Fira Code", sans-serif;
 
-     
-
-    }
-    h1 span button{
-         background-image: linear-gradient(to right top, #cbe6fb, #2a93fa, #f4f9ff);
-      -webkit-background-clip: text; 
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-      @keyframes green {
-    from {
-      background-color: rgb(48, 183, 10);
-      transform: skewY(-30deg);
-    }
-    15% {
-      background-color: lightgreen;
-      transform: skewY(-20deg);
-    }
-    to {
-      background-color: white;
-    }
+  font-variant-ligatures: discretionary-ligatures;
+}
+h1,
+span,
+button {
+  background-image: linear-gradient(to right top, #cbe6fb, #2a93fa, #f4f9ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@keyframes green {
+  from {
+    background-color: rgb(48, 183, 10);
+    transform: skewY(-30deg);
   }
-  @keyframes red {
-    from {
-      background-color: red;
-      transform: skewZ(-40deg);
-    }
-    75% {
-      background-color: lightgoldenrodyellow;
-      transform: skewZ(-2deg);
-    }
-    to {
-      background-color: white;
-    }
-  }
-  @keyframes flyright {
-    from {
-      transform: rotateX(0deg) scaleY(5);
-      opacity: 1;
-    }
-    to {
-      transform: rotateX(100deg) scaleX(5);
-      opacity: 0;
-    }
-  }
-  .green {
-    /* animation: green 0.4s ease-out; */
-  }
-  .red {
-    animation: red 1s;
-  }
-  .greenlog {
+  15% {
     background-color: lightgreen;
-    font-size: large;
+    transform: skewY(-20deg);
   }
-  .redlog {
-    border-bottom: groove salmon 2px;
-    font-size: small;
+  to {
+    background-color: white;
   }
-  #infinitesimal {
-    overflow-x: scroll;
-    height: 10rem;
-    background-color: rgb(104, 159, 207);
+}
+@keyframes red {
+  from {
+    background-color: red;
+    transform: skewZ(-40deg);
   }
-  .invisible {
+  75% {
+    background-color: lightgoldenrodyellow;
+    transform: skewZ(-2deg);
+  }
+  to {
+    background-color: white;
+  }
+}
+@keyframes flyright {
+  from {
+    transform: rotateX(0deg) scaleY(5);
+    opacity: 1;
+  }
+  to {
+    transform: rotateX(100deg) scaleX(5);
     opacity: 0;
   }
-  .flyright {
-    animation-timing-function: linear;
-    animation-name: flyright;
-    animation-duration: 1300ms;
-    font-family:
-      "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  }
+}
+.green {
+  /* animation: green 0.4s ease-out; */
+}
+.red {
+  animation: red 1s;
+}
+.greenlog {
+  background-color: lightgreen;
+  font-size: large;
+}
+.redlog {
+  border-bottom: groove salmon 2px;
+  font-size: small;
+}
+#infinitesimal {
+  overflow-x: scroll;
+  height: 10rem;
+  background-color: rgb(104, 159, 207);
+}
+.invisible {
+  opacity: 0;
+}
+.flyright {
+  animation-timing-function: linear;
+  animation-name: flyright;
+  animation-duration: 1300ms;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
