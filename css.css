@@ -10,7 +10,7 @@
 
     }
     h1 span button{
-         background-image: -webkit-linear-gradient(90deg, hsla(138, 82%, 69%, 1) 0%, hsla(186, 100%, 50%, 1) 100%);
+         background-image: linear-gradient(to right top, #cbe6fb, #2a93fa, #f4f9ff);
       -webkit-background-clip: text; 
       background-clip: text;
       -webkit-text-fill-color: transparent;
