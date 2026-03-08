@@ -3,6 +3,7 @@
 * {
     font-family:
       "Fira Code", monospace;
+      background: -webkit-linear-gradient(90deg, hsla(138, 82%, 69%, 1) 0%, hsla(186, 100%, 50%, 1) 100%);
   }
   @keyframes green {
     from {
