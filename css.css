@@ -2,8 +2,7 @@
 
 * {
     font-family:
-      "Fira Code", "Arial" "Source Code Pro", "Inconsolata", "Roboto Serif",
-      "Roboto Mono", monospace;
+      "Fira Code", monospace;
   }
   @keyframes green {
     from {
