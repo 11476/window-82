@@ -2,10 +2,12 @@
 
 * {
     font-family:
-      "Fira Code", monospace;
+      "Fira Code", sans-serif;
+      
+      font-variant-ligatures:discretionary-ligatures;
       background: -webkit-linear-gradient(90deg, hsla(138, 82%, 69%, 1) 0%, hsla(186, 100%, 50%, 1) 100%);
-  }
-  @keyframes green {
+}
+      @keyframes green {
     from {
       background-color: rgb(48, 183, 10);
       transform: skewY(-30deg);
