@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
 
 * {
   font-family: "Fira Code", sans-serif;
@@ -10,9 +10,9 @@
   padding-left: 100px;
 }
 .title-text {
+  text-align: center;
   font-weight: bold;
 }
-
 
 /* end of housekeeping */
 
@@ -59,9 +59,6 @@ button {
     transform: rotateX(100deg) scaleX(5);
     opacity: 0;
   }
-}
-.green {
-  /* animation: green 0.4s ease-out; */
 }
 .red {
   animation: red 1s;
