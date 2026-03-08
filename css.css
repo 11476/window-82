@@ -2,9 +2,11 @@
 
 * {
     font-family:
-      "Fira Code", monospace;
-  }
-  @keyframes green {
+      "Fira Code", sans-serif;
+      
+      font-variant-ligatures:discretionary-ligatures;
+}
+      @keyframes green {
     from {
       background-color: rgb(48, 183, 10);
       transform: skewY(-30deg);
