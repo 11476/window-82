@@ -5,7 +5,8 @@
       "Fira Code", sans-serif;
       
       font-variant-ligatures:discretionary-ligatures;
-      background: -webkit-linear-gradient(90deg, hsla(138, 82%, 69%, 1) 0%, hsla(186, 100%, 50%, 1) 100%);
+
+      background-image: -webkit-linear-gradient(90deg, hsla(138, 82%, 69%, 1) 0%, hsla(186, 100%, 50%, 1) 100%);
       -webkit-background-clip: text; 
       background-clip: text;
       -webkit-text-fill-color: transparent;
