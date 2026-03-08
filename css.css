@@ -5,6 +5,18 @@
 
   font-variant-ligatures: discretionary-ligatures;
 }
+/* housekeeping */
+.title {
+  padding-left: 100px;
+}
+.title-text {
+  font-size: 10vmin;
+  font-weight: 400;
+}
+
+
+/* end of housekeeping */
+
 h1,
 span,
 button {
