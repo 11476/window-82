@@ -7,79 +7,11 @@
       name="description"
       content="check if numbers are semiprime or not..."
     />
-    <style>
-      * {
-        font-family:
-          "Fira Code", "Arial" "Source Code Pro", "Inconsolata", "Roboto Serif",
-          "Roboto Mono", monospace;
-      }
-      @keyframes green {
-        from {
-          background-color: rgb(48, 183, 10);
-          transform: skewY(-30deg);
-        }
-        15% {
-          background-color: lightgreen;
-          transform: skewY(-20deg);
-        }
-        to {
-          background-color: white;
-        }
-      }
-      @keyframes red {
-        from {
-          background-color: red;
-          transform: skewZ(-40deg);
-        }
-        75% {
-          background-color: lightgoldenrodyellow;
-          transform: skewZ(-2deg);
-        }
-        to {
-          background-color: white;
-        }
-      }
-      @keyframes flyright {
-        from {
-          transform: rotateX(0deg) scaleY(5);
-          opacity: 1;
-        }
-        to {
-          transform: rotateX(100deg) scaleX(5);
-          opacity: 0;
-        }
-      }
-      .green {
-        /* animation: green 0.4s ease-out; */
-      }
-      .red {
-        animation: red 1s;
-      }
-      .greenlog {
-        background-color: lightgreen;
-        font-size: large;
-      }
-      .redlog {
-        border-bottom: groove salmon 2px;
-        font-size: small;
-      }
-      #infinitesimal {
-        overflow-x: scroll;
-        height: 10rem;
-        background-color: rgb(104, 159, 207);
-      }
-      .invisible {
-        opacity: 0;
-      }
-      .flyright {
-        animation-timing-function: linear;
-        animation-name: flyright;
-        animation-duration: 1300ms;
-        font-family:
-          "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-      }
-    </style>
+ 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+  </style>
+
   </head>
   <body id="body">
     <h1 style="text-align: center">Is this Semiprime?</h1>
