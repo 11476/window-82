@@ -42,6 +42,19 @@
     >
       enable PF for non-semiprimes
     </button>
+    <button
+      onclick="
+        mystery = !mystery;
+        if (mystery) {
+          this.style.backgroundImage =
+            'linear-gradient(to right top, #cbe6fb, #2a93fa, #f4f9ff);';
+        } else {
+          this.style.backgroundImage = 'initial';
+        }
+      "
+    >
+      Mystery Button (what does it do)
+    </button>
 
     <script src="./js.js" async defer></script>
     <script async defer>

@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
-
+:root {
+  --gradient: linear-gradient(to right top, #cbe6fb, #2a93fa, #f4f9ff);
+}
 * {
   font-family: "Fira Code", sans-serif;
 
@@ -15,11 +17,12 @@
 }
 
 /* end of housekeeping */
-
-h1,
-span,
 button {
-  background-image: linear-gradient(to right top, #cbe6fb, #2a93fa, #f4f9ff);
+  border: #2a93fa double;
+}
+h1,
+span {
+  background-image: var(--gradient);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -37,20 +40,18 @@ button {
     background-color: white;
   }
 }
-@keyframes red {
+@keyframes fadeopacity {
   from {
-    background-color: red;
-    transform: skewZ(-40deg);
+    opacity: 1;
   }
   75% {
-    background-color: lightgoldenrodyellow;
-    transform: skewZ(-2deg);
+    opacity: 0.5;
   }
   to {
-    background-color: white;
+    opacity: 0;
   }
 }
-@keyframes flyright {
+@keyframes fadescale {
   from {
     transform: rotateX(0deg) scaleY(5);
     opacity: 1;
@@ -61,7 +62,21 @@ button {
   }
 }
 .red {
-  animation: red 1s;
+  background-color: red;
+  animation: fadeopacity 1s;
+}
+.redmystery {
+  background-image: url("henyouyong.png");
+  background-color: red;
+  animation: fadeopacity 1s;
+}
+.greenlog,
+.redlog,
+.PF {
+  background-image: inherit;
+  -webkit-background-clip: inherit;
+  background-clip: inherit;
+  -webkit-text-fill-color: inherit;
 }
 .greenlog {
   background-color: lightgreen;
@@ -81,9 +96,8 @@ button {
 }
 .flyright {
   animation-timing-function: linear;
-  animation-name: flyright;
+  animation-name: fadescale;
   animation-duration: 1300ms;
-  font-family:
-    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Fira Code", monospace;
+  font-weight: lighter;
 }
