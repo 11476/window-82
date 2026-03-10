@@ -74,7 +74,7 @@ function action(x) {
     current_number = 2;
 
     document.getElementById("infinitesimal").innerHTML = "Log: ";
-    let body2 = document.getElementById("body");
+    let body2 = document.getElementById("cover");
     if (!mystery) {
       body2.classList.remove("red");
       void body2.offsetWidth;
@@ -88,7 +88,7 @@ function action(x) {
     clearTimeout(removeRedtimeout);
     removeRedtimeout = setTimeout(function () {
       body2.classList.remove(mystery ? "redmystery" : "red");
-    }, 900);
+    }, 1000);
     number_element.innerHTML = `Round ${round} --> Is ${current_number} semiprime?`;
   }
 

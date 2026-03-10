@@ -17,9 +17,7 @@
 }
 
 /* end of housekeeping */
-button {
-  border: #2a93fa double;
-}
+
 h1,
 span {
   background-image: var(--gradient);
@@ -40,12 +38,17 @@ span {
     background-color: white;
   }
 }
-@keyframes fadeopacity {
+@keyframes F {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+@keyframes F2 {
   from {
     opacity: 1;
-  }
-  75% {
-    opacity: 0.5;
   }
   to {
     opacity: 0;
@@ -62,13 +65,13 @@ span {
   }
 }
 .red {
-  background-color: red;
-  animation: fadeopacity 1s;
+  animation: F 1s;
 }
 .redmystery {
   background-image: url("henyouyong.png");
-  background-color: red;
-  animation: fadeopacity 1s;
+  background-repeat: round;
+  background-size: 200px;
+  animation: F2 1s;
 }
 .greenlog,
 .redlog,
@@ -100,4 +103,14 @@ span {
   animation-duration: 1300ms;
   font-family: "Fira Code", monospace;
   font-weight: lighter;
+}
+a {
+  background-color: #2a93fa;
+  color: lightgoldenrodyellow;
+  font-weight: normal;
+  &:hover {
+    background-color: #cbe6fb;
+    font-weight: bold;
+  }
+  padding: 5px;
 }

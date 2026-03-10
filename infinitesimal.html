@@ -13,6 +13,17 @@
     </style>
   </head>
   <body id="body">
+    <div
+      id="cover"
+      style="
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        pointer-events: none;
+        padding: 5px;
+      "
+    ></div>
     <h1 class="title-text" style="text-align: center">Is this Semiprime?</h1>
     <h1 style="display: inline-block" id="body">
       <span id="number">Round 0 --&gt; Is 2 semiprime?</span>
@@ -46,10 +57,9 @@
       onclick="
         mystery = !mystery;
         if (mystery) {
-          this.style.backgroundImage =
-            'linear-gradient(to right top, #cbe6fb, #2a93fa, #f4f9ff);';
+          this.style.backgroundColor = 'salmon';
         } else {
-          this.style.backgroundImage = 'initial';
+          this.style.backgroundColor = 'initial';
         }
       "
     >
