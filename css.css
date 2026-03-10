@@ -10,7 +10,7 @@
 
 /* housekeeping */
 .title {
-  padding-left: 100px;
+  justify-content: center;
 }
 .title-text {
   text-align: center;
