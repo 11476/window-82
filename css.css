@@ -6,24 +6,37 @@
   font-variant-ligatures: discretionary-ligatures;
 }
 /* housekeeping */
+body {
+  background-image: url();
+
+}
+
 .title {
   padding-left: 100px;
 }
-.title-text {
+.title {
   text-align: center;
   font-weight: bold;
 }
 
-/* end of housekeeping */
-
-h1,
-span,
-button {
-  background-image: linear-gradient(to right top, #cbe6fb, #2a93fa, #f4f9ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.title-text.glow {
+  background-image: linear-gradient(to top, #FF1B6B 25%, #45CAFF 50%, #60EFFF 75%);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #60a5fa;
+    filter: drop-shadow(0 0 6px #60a5fa);
 }
+
+.mini-text.glow {
+  background-image: linear-gradient(to bottom, #ffff 10%, #ffae74 40%, #ff6A00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+/* end of housekeeping */
 @keyframes green {
   from {
     background-color: rgb(48, 183, 10);
@@ -86,4 +99,15 @@ button {
   font-family:
     "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+marquee {
+  font-size: 2.8vmin;
+  font-weight: bold;
+  background-image: linear-gradient(to top, #FF1B6B 25%, #45CAFF 50%, #60EFFF 75%);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #60a5fa;
+    filter: drop-shadow(0 0 6px #60a5fa);
 }
