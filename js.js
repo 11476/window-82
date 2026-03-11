@@ -13,7 +13,7 @@ function checkSemiprime(num) {
   if (num > 1) ++cnt;
   return cnt == 2;
 }
-//feth PF
+//fetch PF
 function primeFactors(n) {
   const factors = [];
   let divisor = 2;
@@ -102,7 +102,7 @@ function action(x) {
     removeRedtimeout = setTimeout(function () {
       body2.classList.remove(mystery ? "redmystery" : "red");
       body2.innerHTML = "";
-    }, 9990);
+    }, 900);
 
     number_element.innerHTML = `Round ${round} --> Is ${current_number} semiprime?`;
   }
