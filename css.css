@@ -1,45 +1,57 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+
 :root {
   --gradient: linear-gradient(to right top, #cbe6fb, #2a93fa, #f4f9ff);
 }
+
 * {
   font-family: "Fira Code", sans-serif;
-  transition: background-color 0.7s;
+
   font-variant-ligatures: discretionary-ligatures;
 }
 
 /* housekeeping */
 body {
   background-image: url();
-
 }
 
 .title {
   justify-content: center;
 }
+
 .title {
   text-align: center;
   font-weight: bold;
 }
 
 .title-text.glow {
-  background-image: linear-gradient(to top, #FF1B6B 25%, #45CAFF 50%, #60EFFF 75%);
-    -webkit-background-clip: text; 
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px #60a5fa;
-    filter: drop-shadow(0 0 6px #60a5fa);
+  background-image: linear-gradient(
+    to top,
+    #ff1b6b 25%,
+    #45caff 50%,
+    #60efff 75%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #60a5fa;
+  filter: drop-shadow(0 0 6px #60a5fa);
 }
 
 .mini-text.glow {
-  background-image: linear-gradient(to bottom, #ffff 10%, #ffae74 40%, #ff6A00 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
+  background-image: linear-gradient(
+    to bottom,
+    #ffff 10%,
+    #ffae74 40%,
+    #ff6a00 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* end of housekeeping */
+/* animations */
+
 @keyframes green {
   from {
     background-color: rgb(48, 183, 10);
@@ -53,6 +65,7 @@ body {
     background-color: white;
   }
 }
+
 @keyframes F {
   from {
     background-color: red;
@@ -61,6 +74,7 @@ body {
     background-color: transparent;
   }
 }
+
 @keyframes F2 {
   from {
     opacity: 1;
@@ -69,6 +83,7 @@ body {
     opacity: 0;
   }
 }
+
 @keyframes fadescale {
   from {
     transform: rotateX(0deg) scaleY(5);
@@ -79,6 +94,7 @@ body {
     opacity: 0;
   }
 }
+
 #y,
 #n,
 button {
@@ -87,24 +103,27 @@ button {
   transition:
     font-size 0.2s,
     border-radius 0.2s;
-  &:hover {
-    border-radius: 3px;
-    font-size: 110%;
-  }
 }
+
+#y:hover,
+#n:hover,
+button:hover {
+  border-radius: 3px;
+  font-size: 110%;
+}
+
 .red {
   background-color: red;
-  animation: F2 1s;
-  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  pointer-events: all;
+  animation: F2 1s both;
 }
+
 .redmystery {
   background-image: url("henyouyong.png");
   background-repeat: round;
   background-size: 200px;
-  animation: F2 1s;
-  pointer-events: all;
+  animation: F2 0.99s;
 }
+
 .greenlog,
 .redlog,
 .PF,
@@ -114,22 +133,27 @@ button {
   background-clip: inherit;
   -webkit-text-fill-color: inherit;
 }
+
 .greenlog {
   background-color: lightgreen;
   font-size: large;
 }
+
 .redlog {
   border-bottom: groove salmon 2px;
   font-size: small;
 }
+
 #infinitesimal {
   overflow-x: scroll;
   height: 10rem;
   background-color: rgb(104, 159, 207);
 }
+
 .invisible {
   opacity: 0;
 }
+
 .flyright {
   animation-timing-function: linear;
   animation-name: fadescale;
@@ -137,18 +161,21 @@ button {
   font-family: "Fira Code", monospace;
   font-weight: lighter;
 }
+
 a {
   background-color: #2a93fa;
   color: lightgoldenrodyellow;
   font-weight: normal;
-  transition: font-size 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  &:hover {
-    background-color: #0055aa;
-    font-weight: bold;
-    font-size: xx-large;
-  }
+  transition: font-size 0.5s linear;
   padding: 5px;
 }
+
+a:hover {
+  background-color: #0055aa;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
 p {
   background-color: #2a93fa;
   font-weight: normal;
@@ -156,22 +183,29 @@ p {
     font-size 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
     background-color 0.4s,
     background-image 0.4s;
-  &:hover {
-    background-color: #cbe6fb;
-  }
-  &::selection {
-    text-decoration: line-through wavy #ff910045 5px;
-  }
   padding: 5px;
+}
+
+p:hover {
+  background-color: #cbe6fb;
+}
+
+p::selection {
+  text-decoration: line-through wavy #ff910045 5px;
 }
 
 marquee {
   font-size: 2.8vmin;
   font-weight: bold;
-  background-image: linear-gradient(to top, #FF1B6B 25%, #45CAFF 50%, #60EFFF 75%);
-    -webkit-background-clip: text; 
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px #60a5fa;
-    filter: drop-shadow(0 0 6px #60a5fa);
+  background-image: linear-gradient(
+    to top,
+    #ff1b6b 25%,
+    #45caff 50%,
+    #60efff 75%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #000000;
+  filter: contrast(120%);
 }

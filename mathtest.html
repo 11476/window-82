@@ -10,7 +10,32 @@
   </head>
   <body>
     <h1 id="prob">2+2=</h1>
-    <input type="number" oninput="action()" />
-    <script src="" async defer></script>
+    <input id="N" type="text" oninput="action(this.value)" />
+    <hr />
+    <a href="index.html"> Back</a>
+    <script async defer>
+      var a,
+        b,
+        op,
+        correct = 4,
+        score = 0;
+      function action(z) {
+        if (z == correct) {
+          a = Math.floor(Math.random() * 15);
+          b = Math.floor(Math.random() * 16);
+          op = "+-"[Math.floor(Math.random() * 2)];
+          if (op == "+") correct = a + b;
+          if (op == "-") correct = a - b;
+          document.getElementById("prob").innerHTML =
+            score + " | " + a + op + b + "=";
+          score++;
+          document.getElementById("N").value = "";
+        }
+      }
+      //   setInterval(() => {
+      //     document.getElementById("N").value = correct * Math.random();
+      //     action(correct);
+      //   }, 0);
+    </script>
   </body>
 </html>

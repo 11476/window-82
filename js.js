@@ -97,7 +97,6 @@ function action(x) {
       body2.classList.add("redmystery");
     }
     body2.innerHTML = `<h1 style='font-size: 5vmin;' class='nograd'>${"WRONG ".repeat(25)}</h1>`;
-
     clearTimeout(removeRedtimeout);
     removeRedtimeout = setTimeout(function () {
       body2.classList.remove(mystery ? "redmystery" : "red");
