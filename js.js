@@ -13,7 +13,7 @@ function checkSemiprime(num) {
   if (num > 1) ++cnt;
   return cnt == 2;
 }
-//feth PF
+//fetch PF
 function primeFactors(n) {
   const factors = [];
   let divisor = 2;
@@ -49,7 +49,7 @@ var forall = false;
 var mystery = false;
 
 // x is either true or false
-function action(x) {
+function action(x, isfocus = false) {
   if (x == checkSemiprime(current_number)) {
     //correct path
     round++;
@@ -66,7 +66,11 @@ function action(x) {
         ),
       ) + 1;
 
-    number_element.innerHTML = `Round ${round} --> Is ${current_number} semiprime?`;
+    if (!isfocus) {
+      number_element.innerHTML = `Round ${round} --> Is ${current_number} semiprime?`;
+    } else {
+      number_element.innerHTML = `${current_number}`;
+    }
 
     //streak
     var now = Date.now();
@@ -97,14 +101,16 @@ function action(x) {
       body2.classList.add("redmystery");
     }
     body2.innerHTML = `<h1 style='font-size: 5vmin;' class='nograd'>${"WRONG ".repeat(25)}</h1>`;
-
     clearTimeout(removeRedtimeout);
     removeRedtimeout = setTimeout(function () {
       body2.classList.remove(mystery ? "redmystery" : "red");
       body2.innerHTML = "";
-    }, 9990);
-
-    number_element.innerHTML = `Round ${round} --> Is ${current_number} semiprime?`;
+    }, 900);
+    if (!isfocus) {
+      number_element.innerHTML = `Round ${round} --> Is ${current_number} semiprime?`;
+    } else {
+      number_element.innerHTML = `${current_number}`;
+    }
   }
   //streak animation
   var s = document.getElementById("streak");
