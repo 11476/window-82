@@ -19,10 +19,17 @@
         op,
         correct = 4,
         score = 0;
+      var start;
+      var num = 0;
       function action(z) {
+        if (num == 0) {
+          start = Date.now();
+          console.log(num);
+        }
+        num++;
         if (z == correct) {
-          a = Math.floor(Math.random() * 15);
-          b = Math.floor(Math.random() * 16);
+          a = Math.floor(Math.random() * 12);
+          b = Math.floor(Math.random() * 11);
           op = "+-"[Math.floor(Math.random() * 2)];
           if (op == "+") correct = a + b;
           if (op == "-") correct = a - b;
@@ -30,6 +37,8 @@
             score + " | " + a + op + b + "=";
           score++;
           document.getElementById("N").value = "";
+          document.getElementById("N").placeholder =
+            `${((Date.now() - start + 1) / 1000 / num).toFixed(6)} seconds per problem`;
         }
       }
       //   setInterval(() => {

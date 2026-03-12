@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Semiprimer</title>
+    <meta
+      name="description"
+      content="check if numbers are semiprime or not..."
+    />
+    <link href="./css.css" rel="stylesheet" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+      #y {
+        background-color: rgba(0, 128, 0, 0.31);
+        border: none;
+        color: lime;
+        border-radius: 20%;
+      }
+      #n {
+        background-color: rgba(250, 128, 114, 0.31);
+        border: none;
+        color: red;
+        border-radius: 20%;
+      }
+    </style>
+  </head>
+  <body
+    id="body"
+    style="
+      overflow-y: scroll;
+      overflow-x: hidden;
+      background-color: black;
+      color: white;
+    "
+  >
+    <div
+      id="cover"
+      style="
+        z-index: 1;
+        width: 200%;
+        height: 200%;
+        position: fixed;
+        padding: 5px;
+        pointer-events: none;
+        color: salmon;
+      "
+    ></div>
+    <h1 class="title-text" style="text-align: center">Is this Semiprime?</h1>
+    <h1 style="display: block; font-size: 15vh; text-align: center" id="body">
+      <span id="number">2</span>
+    </h1>
+    <span id="streak" style="display: none"></span>
+    <div style="display: block; text-align: center; font-size: 7vh">
+      <button id="y" onclick="action(true, true)">(X)</button>
+      <button id="n" onclick="action(false, true)">(C)</button>
+    </div>
+    <br /><br /><br />
+    <p style="display: inline-block">
+      A semiprime is a number which is the product of 2 prime numbers.
+    </p>
+    <div id="infinitesimal" style="display: none">Log:</div>
+    <button
+      onclick="
+        mystery = !mystery;
+        if (mystery) {
+          this.style.background = 'salmon';
+        } else {
+          this.style.background = 'var(--gradient)';
+        }
+      "
+      style="background: var(--gradient)"
+    >
+      Mystery Function
+    </button>
+    <hr />
+    <a href="index.html"> Back </a>
+    <!-- scripts -->
+    <script src="./js.js" async defer></script>
+    <script async defer>
+      document.addEventListener("keydown", function (e) {
+        if (e.key == "x") {
+          document.getElementById("y").click();
+        }
+        if (e.key == "c") {
+          document.getElementById("n").click();
+        }
+      });
+    </script>
+    <!-- <script async defer>
+      let a = setInterval(function () {
+        action(checkSemiprime(current_number), true);
+        if (round > 500) {
+          clearInterval(a);
+        }
+      }, 40);
+    </script> -->
+  </body>
+</html>

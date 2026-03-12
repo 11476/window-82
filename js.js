@@ -49,7 +49,7 @@ var forall = false;
 var mystery = false;
 
 // x is either true or false
-function action(x) {
+function action(x, isfocus = false) {
   if (x == checkSemiprime(current_number)) {
     //correct path
     round++;
@@ -66,7 +66,11 @@ function action(x) {
         ),
       ) + 1;
 
-    number_element.innerHTML = `Round ${round} --> Is ${current_number} semiprime?`;
+    if (!isfocus) {
+      number_element.innerHTML = `Round ${round} --> Is ${current_number} semiprime?`;
+    } else {
+      number_element.innerHTML = `${current_number}`;
+    }
 
     //streak
     var now = Date.now();
@@ -102,8 +106,11 @@ function action(x) {
       body2.classList.remove(mystery ? "redmystery" : "red");
       body2.innerHTML = "";
     }, 900);
-
-    number_element.innerHTML = `Round ${round} --> Is ${current_number} semiprime?`;
+    if (!isfocus) {
+      number_element.innerHTML = `Round ${round} --> Is ${current_number} semiprime?`;
+    } else {
+      number_element.innerHTML = `${current_number}`;
+    }
   }
   //streak animation
   var s = document.getElementById("streak");

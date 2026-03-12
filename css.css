@@ -95,8 +95,6 @@ body {
   }
 }
 
-#y,
-#n,
 button {
   font-size: 100%;
   border-radius: 5px;
@@ -174,6 +172,7 @@ a:hover {
   background-color: #0055aa;
   font-weight: bold;
   font-size: xx-large;
+  -webkit-text-fill-color: greenyellow;
 }
 
 p {
@@ -207,5 +206,9 @@ marquee {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px #000000;
-  filter: contrast(120%);
+  border: #0055aa dotted;
+  margin: 1vmin;
+}
+.nograd {
+  background: none;
 }
