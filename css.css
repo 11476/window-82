@@ -10,7 +10,7 @@
 
 /* housekeeping */
 body {
-  background-image: url();
+  background-image: url(https://images.unsplash.com/photo-1549317336-206569e8475c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
 
 }
 
@@ -20,6 +20,11 @@ body {
 .title {
   text-align: center;
   font-weight: bold;
+}
+
+ol {
+  align-items: center;
+  padding-left: 100px;
 }
 
 .title-text.glow {
@@ -37,6 +42,18 @@ body {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     
+}
+
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  background: linear-gradient(-45deg, #999999, #8cd3ff, #91a6d5, #57a8ff);
+  background-size: 400% 400%;
+  animation: gradient-shift 8s ease infinite;
 }
 
 /* end of housekeeping */
