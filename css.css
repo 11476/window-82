@@ -18,7 +18,6 @@
 /* housekeeping */
 body {
   background-image: url();
-
 }
 
 .title {
@@ -38,7 +37,7 @@ ol {
 .title-text.glow {
   background-image: linear-gradient(
     to top,
-    #ff1b6b 25%,
+    #1b76ff 25%,
     #45caff 50%,
     #60efff 75%
   );
@@ -66,11 +65,12 @@ ol {
 /* nav bar */
 #main-nav {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   display: flex;
   align-items: center;
-  background: linear-gradient(to right, #ff1b6b 30%, #45caff, #60efff);
+  background: var(--gradient);
   filter: drop-shadow(0 0 4px #60a5fa);
   backdrop-filter: blur(8px);
   border-bottom: 2px solid rgba(1, 115, 255, 0.957);
@@ -84,8 +84,9 @@ ol {
   background: linear-gradient(to right, #ff1b6b, #45caff, #60efff);
   filter: drop-shadow(0 0 4px #60a5fa);
   border-radius: 2px;
-  transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-              width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-item {
@@ -94,21 +95,28 @@ ol {
   text-align: center;
   cursor: pointer;
   font-family: "Fira Code", monospace;
-  font-size: 13px;
+  font-size: 100%;
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.45);
   border: 1px solid transparent;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
 }
-
+/*
 .nav-item:hover {
   border-color: rgba(113, 113, 113, 0.992);
   background: rgba(255, 255, 255, 0.05);
   color: rgba(255, 255, 255, 0.85);
 }
-
-.nav-item.active {
-  background-image: linear-gradient(to top, #ff1b6b 25%, #45caff 50%, #60efff 75%);
+*/
+.nav-item:hover {
+  background-image: linear-gradient(
+    to top,
+    #ff1b6b 25%,
+    #ffa545 50%,
+    #ff6060 75%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -233,7 +241,12 @@ a {
   transition: font-size 0.5s linear;
   padding: 5px;
 }
-
+.grad {
+  background: var(--gradient);
+  -webkit-background-clip: none;
+  background-clip: none;
+  -webkit-text-fill-color: inherit;
+}
 a:hover {
   background-image: linear-gradient(
     to top,
@@ -267,8 +280,8 @@ p::selection {
 }
 
 marquee {
-  font-size: 2.8vmin;
-  font-weight: bold;
+  font-size: 170%;
+  font-weight: bolder;
   background-image: linear-gradient(
     to top,
     #ff1b6b 25%,
