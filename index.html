@@ -9,10 +9,21 @@
     <link rel="stylesheet" href="./css.css" />
   </head>
   <body>
+
+    <nav id="main-nav">
+      <div id="nav-slider"></div>
+      <div class="nav-item active" data-page="home">Home</div>
+      <div class="nav-item" data-page="about">About</div>
+      <div class="nav-item" data-page="contact">Contact</div>
+      <div class="nav-item" data-page="store">Store</div>
+    </nav>
+
+      <div class="spacer"></div>
+
     <div class="title">
       <h1
-        class="mini-text glow"
-        style="font-size: 10vmin; border: 4mm ridge salmon; padding: 5px"
+        class="title-text glow"
+        style="font-size: 10vmin;"
       >
         Extremely Boring Games
       </h1>
@@ -39,33 +50,11 @@
       </p>
     </div>
 
-    <div class="nav">
-      <a href="index.html">#</a>
-    </div>
-
     <div>
-      <marquee behavior="alternate" direction="left" scrolldelay="40">
-        <marquee
-          style="width: 33vw; font-weight: bolder"
-          behavior="alternate"
-          direction="right"
-        >
-          <a class="nograd" href="infinitesimal.html"
-            >Is it Semiprime?</a
-          ></marquee
-        >ebg
-        <marquee
-          style="width: 33vw; font-weight: bolder"
-          behavior="alternate"
-          scrollamount="3"
-        >
-          <a class="nograd" href="mathtest.html">Timed *math test*</a>
-        </marquee>
-      </marquee>
       <marquee behavior="alternate" direction="left">
         <marquee style="width: 27rem" behavior="scroll" direction="right">
           <a href="infinitesimal.html">Is it Semiprime?</a></marquee
-        >ebg
+        >
         <marquee style="width: 17rem" behavior="scroll" scrollamount="3">
           <a href="mathtest.html">Timed *math test*</a>
         </marquee>
