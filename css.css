@@ -22,9 +22,6 @@ body {
 
 .title {
   justify-content: center;
-}
-
-.title {
   text-align: center;
   font-weight: bold;
 }
@@ -33,7 +30,9 @@ ol {
   align-items: center;
   padding-left: 100px;
 }
-
+.title-text {
+  font-size: x-large;
+}
 .title-text.glow {
   background-image: linear-gradient(
     to top,
