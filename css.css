@@ -16,15 +16,8 @@
 }
 
 /* housekeeping */
-body {
-  background-image: url();
-}
-
 .title {
   justify-content: center;
-}
-
-.title {
   text-align: center;
   font-weight: bold;
 }
@@ -33,7 +26,9 @@ ol {
   align-items: center;
   padding-left: 100px;
 }
-
+.title-text {
+  font-size: x-large;
+}
 .title-text.glow {
   background-image: linear-gradient(
     to top,
@@ -127,7 +122,7 @@ ol {
 }
 
 /* end nav bar */
-
+/*
 @keyframes green {
   from {
     background-color: rgb(48, 183, 10);
@@ -140,8 +135,10 @@ ol {
   to {
     background-color: white;
   }
-}
-
+} 
+unused
+*/
+/* exclusive to "infinitesimal.html" and "infinitesimal-focus.html" */
 @keyframes F {
   from {
     background-color: red;
@@ -235,19 +232,13 @@ button:hover {
   font-family: "Fira Code", monospace;
   font-weight: lighter;
 }
-
+/* end */
 a {
   background-color: #2a93fa;
   color: lightgoldenrodyellow;
   font-weight: normal;
   transition: font-size 0.5s linear;
   padding: 5px;
-}
-.grad {
-  background: var(--gradient);
-  -webkit-background-clip: none;
-  background-clip: none;
-  -webkit-text-fill-color: inherit;
 }
 a:hover {
   background-image: linear-gradient(
@@ -262,23 +253,29 @@ a:hover {
   -webkit-text-stroke: 1px #60a5fa;
   filter: drop-shadow(0 0 6px #60a5fa);
 }
-
-p {
-  background-color: #2a93fa;
-  font-weight: normal;
-  transition:
-    font-size 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
-    background-color 0.4s,
-    background-image 0.4s;
-  padding: 5px;
+.grad {
+  background: var(--gradient);
+  -webkit-background-clip: none;
+  background-clip: none;
+  -webkit-text-fill-color: inherit;
 }
 
-p:hover {
-  background-color: #cbe6fb;
+/*exclusive to "index.html"*/
+@keyframes moveBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1920px 0; /* Move left by image width */
+  }
 }
-
-p::selection {
-  text-decoration: line-through wavy #ff910045 5px;
+.hyybg {
+  width: 100%;
+  height: 100%;
+  background-image: url("4.svg"); /* placeholder */
+  background-repeat: repeat;
+  background-size: contain;
+  animation: moveBackground 30s linear infinite; /* Animation */
 }
 
 marquee {
@@ -297,6 +294,24 @@ marquee {
   border: #0055aa dotted;
   margin: 1vmin;
 }
+/*end*/
+p {
+  background-color: #2a93fa;
+  font-weight: normal;
+  transition:
+    font-size 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+    background-color 0.4s,
+    background-image 0.4s;
+  padding: 5px;
+}
+p:hover {
+  background-color: #cbe6fb;
+}
+
+p::selection {
+  text-decoration: line-through wavy #ff910045 5px;
+}
+
 .nograd {
   background: none;
 }
