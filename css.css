@@ -70,11 +70,19 @@ ol {
   width: 100%;
   display: flex;
   align-items: center;
-  background: var(--gradient);
+  background: linear-gradient(270deg, #00F7FF, #B0FFFA, #FF0087, #FF7DB0);
+  background-size: 600% 600%;
+  animation: swirl 6s ease infinite;
   filter: drop-shadow(0 0 4px #60a5fa);
   backdrop-filter: blur(8px);
   border-bottom: 2px solid rgba(1, 115, 255, 0.957);
   z-index: 1000;
+}
+
+@keyframes swirl {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 #nav-slider {
@@ -103,13 +111,7 @@ ol {
     color 0.2s,
     border-color 0.2s;
 }
-/*
-.nav-item:hover {
-  border-color: rgba(113, 113, 113, 0.992);
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.85);
-}
-*/
+
 .nav-item:hover {
   background-image: linear-gradient(
     to top,
