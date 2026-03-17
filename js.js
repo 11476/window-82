@@ -48,7 +48,7 @@ var round = 0;
 var forall = false;
 var mystery = false;
 
-// x is either true or false
+// x is either true or false, change document accordingly
 function action(x, isfocus = false) {
   if (x == checkSemiprime(current_number)) {
     //correct path
@@ -126,25 +126,27 @@ function action(x, isfocus = false) {
     s.classList.add("invisible");
   }, 1200);
 }
-//  </script>
 
-const navItems = document.querySelectorAll('.nav-item');
-  const slider = document.getElementById('nav-slider');
+//nav nav nav
+const navItems = document.querySelectorAll(".nav-item");
+const slider = document.getElementById("nav-slider");
 
-  function setActive(el) {
-    navItems.forEach(i => i.classList.remove('active'));
-    el.classList.add('active');
-    slider.style.left = el.offsetLeft + 'px';
-    slider.style.width = el.offsetWidth + 'px';
-  }
+function setActive(el) {
+  navItems.forEach((i) => i.classList.remove("active"));
+  el.classList.add("active");
+  slider.style.left = el.offsetLeft + "px";
+  slider.style.width = el.offsetWidth + "px";
+}
 
-  navItems.forEach(item => item.addEventListener('click', () => setActive(item)));
+navItems.forEach((item) =>
+  item.addEventListener("click", () => setActive(item)),
+);
 
-  // init slider position on load + resize
-  const initSlider = () => {
-    const active = document.querySelector('.nav-item.active');
-    slider.style.left = active.offsetLeft + 'px';
-    slider.style.width = active.offsetWidth + 'px';
-  };
-  window.addEventListener('resize', initSlider);
-  window.addEventListener('DOMContentLoaded', initSlider);
+// init slider position on load + resize
+const initSlider = () => {
+  const active = document.querySelector(".nav-item.active");
+  slider.style.left = active.offsetLeft + "px";
+  slider.style.width = active.offsetWidth + "px";
+};
+window.addEventListener("resize", initSlider);
+window.addEventListener("DOMContentLoaded", initSlider);

@@ -1,34 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
 
+/* ===== VARIABLES ===== */
 :root {
   --gradient: linear-gradient(to right top, #cbe6fb, #2a93fa, #f4f9ff);
+  --bright: #ffd700ff;
+  --dark: #ffbf00ff;
+  --darker: #e09540ff;
+  --normal: #ffa500ff;
+  --darkest: #2b4593ff;
+  --macaronigradient: linear-gradient(
+    270deg,
+    #ffd700,
+    #ffbf00,
+    #e09540,
+    #ffa500
+  );
+}
+
+/* ===== GLOBAL STYLES ===== */
+body {
+  background: var(--bright);
 }
 
 * {
   font-family: "Fira Code", sans-serif;
-
   font-variant-ligatures: discretionary-ligatures;
 }
 
-.spacer {
-  margin-top: 10vw;
-  margin-bottom: 10vw;
-}
-
-/* housekeeping */
+/* ===== TYPOGRAPHY ===== */
 .title {
   justify-content: center;
   text-align: center;
   font-weight: bold;
 }
 
-ol {
-  align-items: center;
-  padding-left: 100px;
-}
 .title-text {
   font-size: x-large;
 }
+
 .title-text.glow {
   background-image: linear-gradient(
     to top,
@@ -55,38 +64,86 @@ ol {
   -webkit-text-fill-color: transparent;
 }
 
-/* end of housekeeping */
+p {
+  background-color: var(--dark);
+  font-weight: normal;
+  padding: 5px;
+  letter-spacing: -1px;
+  transition:
+    font-size 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+    background-color 0.4s;
+}
 
-/* nav bar */
+p:hover {
+  background-color: var(--darker);
+}
+
+p::selection {
+  background-color: #0055aa;
+  color: var(--normal);
+}
+
+a {
+  background-color: #2a93fa;
+  color: lightgoldenrodyellow;
+  font-weight: normal;
+  padding: 5px;
+  transition: font-size 0.5s linear;
+}
+
+a:hover {
+  background-image: linear-gradient(
+    to top,
+    #ff1b6b 25%,
+    #45caff 50%,
+    #60efff 75%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #60a5fa;
+  filter: drop-shadow(0 0 6px #60a5fa);
+}
+
+a.nav-item {
+  background: unset;
+}
+
+/* ===== NAVIGATION ===== */
+@keyframes swirl {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 #main-nav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: center;
-  background: linear-gradient(270deg, #00F7FF, #B0FFFA, #FF0087, #FF7DB0);
-  background-size: 600% 600%;
-  animation: swirl 6s ease infinite;
-  filter: drop-shadow(0 0 4px #60a5fa);
-  backdrop-filter: blur(8px);
-  border-bottom: 2px solid rgba(1, 115, 255, 0.957);
   z-index: 1000;
-}
-
-@keyframes swirl {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  background: var(--macaronigradient);
+  background-size: 600% 600%;
+  border-bottom: 2px solid rgba(1, 115, 255, 0.957);
+  backdrop-filter: blur(8px);
+  filter: drop-shadow(0 0 4px #60a5fa);
+  animation: swirl 6s ease infinite;
 }
 
 #nav-slider {
   position: absolute;
   bottom: 0;
   height: 2px;
-  background: linear-gradient(to right, #ff1b6b, #45caff, #60efff);
-  filter: drop-shadow(0 0 4px #60a5fa);
   border-radius: 2px;
+  filter: drop-shadow(0 0 4px #60a5fa);
   transition:
     left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -100,74 +157,19 @@ ol {
   font-family: "Fira Code", monospace;
   font-size: 100%;
   letter-spacing: 0.05em;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--darkest);
   border: 1px solid transparent;
   transition:
+    font-size 0.5s,
     color 0.2s,
     border-color 0.2s;
 }
 
 .nav-item:hover {
-  background-image: linear-gradient(
-    to top,
-    #ff1b6b 25%,
-    #ffa545 50%,
-    #ff6060 75%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 0.5px #60a5fa;
-  filter: drop-shadow(0 0 5px #60a5fa88);
+  font-size: x-large;
 }
 
-/* end nav bar */
-/*
-@keyframes green {
-  from {
-    background-color: rgb(48, 183, 10);
-    transform: skewY(-30deg);
-  }
-  15% {
-    background-color: lightgreen;
-    transform: skewY(-20deg);
-  }
-  to {
-    background-color: white;
-  }
-} 
-unused
-*/
-/* exclusive to "infinitesimal.html" and "infinitesimal-focus.html" */
-@keyframes F {
-  from {
-    background-color: red;
-  }
-  to {
-    background-color: transparent;
-  }
-}
-
-@keyframes F2 {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes fadescale {
-  from {
-    transform: rotateX(0deg) scaleY(5);
-    opacity: 1;
-  }
-  to {
-    transform: rotateX(100deg) scaleX(5);
-    opacity: 0;
-  }
-}
-
+/* ===== BUTTONS ===== */
 button {
   font-size: 100%;
   border-radius: 5px;
@@ -183,6 +185,73 @@ button:hover {
   font-size: 110%;
 }
 
+/* ===== ANIMATIONS ===== */
+@keyframes fadescale {
+  from {
+    transform: rotateX(0deg) scaleY(5);
+    opacity: 1;
+  }
+  to {
+    transform: rotateX(100deg) scaleX(5);
+    opacity: 0;
+  }
+}
+
+@keyframes F2 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes F {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes moveBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1920px 0;
+  }
+}
+
+/* ===== UTILITIES ===== */
+.spacer {
+  margin-top: 10vw;
+  margin-bottom: 10vw;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.nograd {
+  background: none;
+}
+
+.grad {
+  background: var(--gradient);
+  -webkit-background-clip: none;
+  background-clip: none;
+  -webkit-text-fill-color: inherit;
+}
+
+/* ===== INFINITESIMAL (infinitesimal.html / infinitesimal-focus.html) ===== */
+#infinitesimal {
+  height: 10rem;
+  background-color: var(--darkest);
+  color: var(--normal);
+}
+
 .red {
   background-color: red;
   animation: F2 1s both;
@@ -193,6 +262,14 @@ button:hover {
   background-repeat: round;
   background-size: 200px;
   animation: F2 0.99s;
+}
+
+.flyright {
+  font-family: "Fira Code", monospace;
+  font-weight: lighter;
+  animation-name: fadescale;
+  animation-duration: 1300ms;
+  animation-timing-function: linear;
 }
 
 .greenlog,
@@ -206,7 +283,8 @@ button:hover {
 }
 
 .greenlog {
-  background-color: lightgreen;
+  background-color: var(--normal);
+  color: var(--darkest);
   font-size: large;
 }
 
@@ -215,72 +293,21 @@ button:hover {
   font-size: small;
 }
 
-#infinitesimal {
-  overflow-x: scroll;
-  height: 10rem;
-  background-color: rgb(104, 159, 207);
-}
-
-.invisible {
-  opacity: 0;
-}
-
-.flyright {
-  animation-timing-function: linear;
-  animation-name: fadescale;
-  animation-duration: 1300ms;
-  font-family: "Fira Code", monospace;
-  font-weight: lighter;
-}
-/* end */
-a {
-  background-color: #2a93fa;
-  color: lightgoldenrodyellow;
-  font-weight: normal;
-  transition: font-size 0.5s linear;
-  padding: 5px;
-}
-a:hover {
-  background-image: linear-gradient(
-    to top,
-    #ff1b6b 25%,
-    #45caff 50%,
-    #60efff 75%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px #60a5fa;
-  filter: drop-shadow(0 0 6px #60a5fa);
-}
-.grad {
-  background: var(--gradient);
-  -webkit-background-clip: none;
-  background-clip: none;
-  -webkit-text-fill-color: inherit;
-}
-
-/*exclusive to "index.html"*/
-@keyframes moveBackground {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -1920px 0; /* Move left by image width */
-  }
-}
+/* ===== INDEX PAGE ===== */
 .hyybg {
   width: 100%;
   height: 100%;
-  background-image: url("4.svg"); /* placeholder */
+  background-image: url("4.svg");
   background-repeat: repeat;
   background-size: contain;
-  animation: moveBackground 30s linear infinite; /* Animation */
+  animation: moveBackground 30s linear infinite;
 }
 
 marquee {
+  margin: 1vmin;
   font-size: 170%;
   font-weight: bolder;
+  border: #0055aa dotted;
   background-image: linear-gradient(
     to top,
     #ff1b6b 25%,
@@ -291,27 +318,10 @@ marquee {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px #000000;
-  border: #0055aa dotted;
-  margin: 1vmin;
-}
-/*end*/
-p {
-  background-color: #2a93fa;
-  font-weight: normal;
-  transition:
-    font-size 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
-    background-color 0.4s,
-    background-image 0.4s;
-  padding: 5px;
-}
-p:hover {
-  background-color: #cbe6fb;
 }
 
-p::selection {
-  text-decoration: line-through wavy #ff910045 5px;
-}
-
-.nograd {
-  background: none;
+/* ===== LAYOUT ===== */
+ol {
+  align-items: center;
+  padding-left: 100px;
 }

@@ -32,8 +32,8 @@
         padding: 5px;
       "
     ></div>
-    <h1 class="title-text" style="text-align: center">Is this Semiprime?</h1>
-    <div style="background-color: lightgoldenrodyellow">
+    <h1 class="title hyybg" style="text-align: center">Is this Semiprime?</h1>
+    <div style="background-color: var(--normal)">
       <h1 style="display: inline-block; margin: auto" id="body">
         <span id="number">Round 0 --&gt; Is 2 semiprime?</span>
       </h1>
@@ -55,9 +55,9 @@
       onclick="
         forall = !forall;
         if (forall) {
-          this.style.backgroundColor = 'salmon';
+          this.style.backgroundColor = 'var(--darker)';
         } else {
-          this.style.backgroundColor = 'initial';
+          this.style.backgroundColor = 'white';
         }
       "
     >
@@ -67,9 +67,9 @@
       onclick="
         mystery = !mystery;
         if (mystery) {
-          this.style.backgroundColor = 'salmon';
+          this.style.backgroundColor = 'var(--bright)';
         } else {
-          this.style.backgroundColor = 'initial';
+          this.style.backgroundColor = 'white';
         }
       "
     >
