@@ -148,7 +148,12 @@ a.nav-item {
     left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.ten-vmin {
+  font-size: 10vmin;
+}
+.five-vmin {
+  font-size: 10vmin;
+}
 .nav-item {
   flex: 1;
   padding: 14px 0;

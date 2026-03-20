@@ -9,6 +9,31 @@
     <link rel="stylesheet" href="css.css" />
   </head>
   <body>
+    <nav id="main-nav">
+      <div id="nav-slider"></div>
+      <a class="nav-item" data-page="home" href="index.html">Home</a>
+      <a class="nav-item" data-page="about" href="about.html">About</a>
+      <div class="nav-item" data-page="contact">Contact</div>
+      <div class="nav-item" data-page="store">Store</div>
+    </nav>
+
+    <div class="spacer"></div>
+
+    <div class="title">
+      <div
+        class="hyybg"
+        style="
+          background-image: url(&quot;0.svg&quot;);
+          background-size: auto 25%;
+          animation-duration: 12s;
+        "
+      >
+        <div class="hyybg" style="overflow-x: hidden">
+          <h1 class="title-text glow ten-vmin">
+            Extremely Boring Games - About
+          </h1>
+          Modified in v1 - "aboutness"
+        </div></div>
     <p>
       Welcome to the most boring gaming website on the internet. Here, you won't
       find adventures, epic battles, or anything special. Instead, we proudly
@@ -22,14 +47,17 @@
       animations. If you're tired of games trying too hard to impress you,
       you've come to the perfect place. Prepare to be underwhelmed.
     </p>
-
-    <p>
-      <span class="title">Is It Semiprime?</span><hr> You are given a number. Is it a product of two prime
-      numbers?
-    </p>
-    <p>
-      <span class="title">Timed *math test*</span><hr> Not timed, apparently. Well, we're timing your rate on
-      basic addition and subtraction.
-    </p>
+    <div style="display: block; background-color: var(--darkest); color: var(--normal);">
+      <a class="title-text five-vmin nograd" href="infinitesimal.html">Is It Semiprime?</a>
+      <hr />
+      You are given a number. Is it a product of two prime numbers?
+    </div>
+    <br />
+    <div style="display: block; background-color: var(--darkest); color: var(--normal);">
+     <a class="title-text five-vmin nograd" href="mathtest.html">Timed *math test*</a>
+      <hr />
+      Not timed, apparently. Well, we're timing your rate on basic addition and
+      subtraction.
+    </div>
   </body>
 </html>
